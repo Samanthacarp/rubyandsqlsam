@@ -19,6 +19,21 @@
 # 1. in terminal, generate a model and table for ______
 # rails generate model _____
 
+class Createsalesperson < ActiveRecord::Migration[7.1]
+    def change
+        create_table :salesperson do |t|
+            t.string "first_name"
+            t.string "last_name"
+            t.string "email"
+            t.integer "company_id"
+
+t. timestamps 
+
+        end 
+    end 
+end
+
+
 # 2. open newly generated files
 
 # 3. in the db/migrate file, add relevant columns matching our domain model

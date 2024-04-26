@@ -16,12 +16,35 @@ Rails.logger.info "------------------------"
 # 1a. check out the schema file
 # 1b. check out the model file
 
+puts "There are #{Company.all.count} companies"
+
 # "talk" to the companies table using the Company model:
 
 # Number of rows in companies table
-puts "companies: #{Company.all.count}" # companies: 0
+
 
 # 2. insert new rows in companies table
+
+new_company = Company.new
+p new_company
+new_company ["name"] = "Apple"
+new_company ["city"] = "Cupertino"
+new_company["url"] = "https://apple.com"
+p new_company
+
+
+company=company.new
+p company
+company ["name"] = "Amazon"
+company ["city"] = "Seattle"
+company ["state"] = "WA"
+company.save
+
+puts "There are #{Company.all.count} companies"
+
+
+
+
 
 # Insert a row
 new_company = Company.new
@@ -62,9 +85,15 @@ puts "companies: #{Company.all.count}" # companies: 3
 
 # 3. query companies table to find all row with California company
 
+all_companies = Company.all
+
 # All rows in companies table
 all_companies = Company.all
 puts all_companies.inspect
+
+call_companies = Company.where()
+
+p "companies in cali: "
 
 # All rows in companies table where state is "CA"
 california_companies = Company.where({ "state" => "CA" })
